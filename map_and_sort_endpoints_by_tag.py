@@ -4,6 +4,7 @@ def get_tags(openapi_data: dict) -> list:
     tags = []
     for tag in openapi_data.get('tags'):
         tags.append(tag.get('name'))
+
     return tags
 
 
@@ -13,6 +14,7 @@ def get_endpoints(openapi_data: dict) -> list:
         path_details = openapi_data.get('paths').get(path)
         for operation in path_details:
             endpoints.append({'summary': path_details.get(operation).get('summary') ,'path': path, 'operation': operation, 'tags': path_details.get(operation).get('tags')})
+
     return endpoints
 
 
