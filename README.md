@@ -1,6 +1,6 @@
 # map_and_sort_endpoints_by_tag
 
-The script is responsible for read the OpenAPI file, get the tags, get the endpoints details and, with all this information, organize the endpoints listing and sort ascending by tags. You can use this script to get information about the OpenAPI file or map the site navigation for your documentation site.
+The script is responsible for read the OpenAPI file, get the tags, get the endpoints details and, with all this information, sort ascending the endpoints grouped by tags. You can use this script to get information about the OpenAPI file or map the site navigation for your documentation site.
 
 This script is compatible with OpenAPI Specification version 2.
 
