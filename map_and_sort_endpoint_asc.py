@@ -37,6 +37,7 @@ def append_endpoints_to_tag(endpoints: list, tags: list) -> dict:
         for endpoint in endpoints:
             if tag in endpoint.get('tags'):
                 endpoints_by_tag[tag].append({'path': endpoint.get('path'), 'operation':endpoint.get('operation'), 'summary': endpoint.get('summary')})
+
     return endpoints_by_tag
 
 
@@ -53,6 +54,7 @@ def sort_endpoints_asc_by_tag(endpoints_by_tag: dict) -> dict:
                         counter += 1
             new_endpoints_by_tag[tag][counter] = endpoint
             counter = 0
+
     return new_endpoints_by_tag
 
 
