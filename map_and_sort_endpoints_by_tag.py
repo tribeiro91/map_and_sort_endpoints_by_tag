@@ -6,6 +6,7 @@ def get_tags(openapi_data: dict) -> list:
         tags.append(tag.get('name'))
     return tags
 
+
 def get_endpoints(openapi_data: dict) -> list:
     endpoints = []
     for path in openapi_data.get('paths'):
@@ -28,6 +29,7 @@ def sort_tags_asc(tags: list) -> list:
         counter = 0
     
     return new_tags_list
+
 
 def append_endpoints_to_tag(endpoints: list, tags: list) -> dict:
     endpoints_by_tag = {}
@@ -59,7 +61,7 @@ def sort_endpoints_asc_by_tag(endpoints_by_tag: dict) -> dict:
 
 
 def main():
-    with open('swagger.json', 'r') as file:
+    with open('../../swagger.json', 'r') as file:
         openapi_data = json.loads(file.read())
         tags = get_tags(openapi_data)
         endpoints = get_endpoints(openapi_data)
@@ -68,6 +70,7 @@ def main():
         sorted_endpoints_by_tag = sort_endpoints_asc_by_tag(endpoints_by_tag)
 
         print(sorted_endpoints_by_tag)
+
 
 if __name__=="__main__":
     main()
